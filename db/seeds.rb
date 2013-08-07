@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+ActiveRecord::Base.transaction do
+  jeff = User.create!(:username => "Jeff", :user_id => 123)
+  sam = User.create!(:username => "Sam", :user_id => 456)
+
+  Follow.create!(:follower_id => 1, :leader_id => 2)
+
+end
